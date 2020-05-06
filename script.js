@@ -7,8 +7,8 @@ function photoEl (){
     pictureEl.appendChild(emailElement(customer.email))
     pictureEl.appendChild(streetElement(customer.location.street))
     pictureEl.appendChild(cszElement(`${customer.location.city}, ${nameToAbbr(customer.location.state)}, ${customer.location.postcode}`))
-    pictureEl.appendChild(bdayElement(`DOB: ${customer.dob}`))
-    pictureEl.appendChild(regElement(`Customer since: ${customer.registered}`))
+    pictureEl.appendChild(bdayElement(`DOB: ${moment(customer.dob).format('MMM Do, YYYY')}`))
+    pictureEl.appendChild(regElement(`Customer since: ${moment(customer.registered).format('MMM Do, YYYY')}`))
     targetEl.appendChild(pictureEl)
 
     }
@@ -42,6 +42,8 @@ function cszElement (csz) {
 }
 
 function bdayElement (bday) {
+    console.log(bday)
+
     let bdayEl = document.createElement('p')
     bdayEl.innerText = `${bday}`
     return bdayEl

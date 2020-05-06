@@ -1,0 +1,19 @@
+body {
+
+    background-color: rgb(252, 252, 252);
+}
+
+.info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-transform: capitalize;
+}
+h5{
+    color: darkgrey;
+    text-transform: lowercase;
+}
+
+img {
+    border-radius: 50% 70%;
+}
